@@ -1,9 +1,7 @@
 package tr.project.kerem.syndicate.entities;
 
 import java.time.LocalDate;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
-
 import jakarta.persistence.*;
 import lombok.*;
 import tr.project.kerem.syndicate.enums.Gender;

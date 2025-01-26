@@ -1,6 +1,7 @@
 package tr.project.kerem.syndicate.services;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,11 @@ public class MemberServiceImpl implements MemberService {
 		}
 		
 		throw new IOException("Aynı id de kayıt var");
+	}
+
+	@Override
+	public List<Member> getAllMembers() {
+		return memberRepository.findAll();
 	}
 
 }

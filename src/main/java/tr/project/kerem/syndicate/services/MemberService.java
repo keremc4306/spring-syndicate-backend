@@ -8,4 +8,5 @@ import tr.project.kerem.syndicate.entities.Member;
 public interface MemberService {
 	Member createMembership(Member member) throws IOException;
 	List<Member> getAllMembers();
+	Member getByMemberTrIdNumber(Long trIdNumber) throws IOException;
 }

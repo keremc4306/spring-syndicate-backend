@@ -2,6 +2,7 @@ package tr.project.kerem.syndicate.services;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,15 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public List<Member> getAllMembers() {
 		return memberRepository.findAll();
+	}
+
+	@Override
+	public Member getByMemberTrIdNumber(Long trIdNumber) throws IOException {
+		Optional<Member> optionalMember = memberRepository.findByTrIdNumber(trIdNumber);
+		if (optionalMember.isPresent()) {
+			return optionalMember.get();
+		}
+		throw new IOException("Böyle bir kayıt yok");
 	}
 
 }
